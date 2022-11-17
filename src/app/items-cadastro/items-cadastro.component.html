@@ -1,0 +1,38 @@
+<h1>Cadastre o produto</h1>
+<form [formGroup]="produtoForm" (ngSubmit)="onSubmit()" class="formgrid grid">
+    <div class="field col-12 md:col-6">
+        <span class="p-float-label">
+            <input id="nome" type="text" formControlName="nome" pInputText class="w-full"> 
+            <label for="nome">Nome</label>
+        </span>
+    </div>
+    <div class="field col-12 md:col-6">
+        <span class="p-float-label">
+            <input id="sku" type="text" formControlName="sku" pInputText class="w-full"> 
+            <label for="sku">SKU</label>
+        </span>
+    </div>
+    <div class="field col-3">
+        <span class="p-float-label">
+            <input id="lote" type="text" formControlName="lote" pInputText> 
+            <label for="lote">Lote</label>
+        </span>
+    </div>
+    <div class="field col-3">
+        <span class="p-float-label">
+            <input id="quantidade" type="text" formControlName="quantidade" pInputText> 
+            <label for="quantidade">Quantidade</label>
+        </span>
+    </div>
+    <div class="field col-3">
+        <span class="p-float-label">
+            <input id="preco" type="text" formControlName="preco" pInputText> 
+            <label for="preco">Preço</label>
+        </span>
+    </div>
+
+    <div class="field col-12">  
+        <button pButton type="button" label="Cadastrar" type="submit"></button>
+        <button pButton type="button" label="Cancelar" type="reset"></button>
+    </div>
+</form>
