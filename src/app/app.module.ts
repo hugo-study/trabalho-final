@@ -3,8 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
-import {CheckboxModule} from 'primeng/checkbox';
+import {ToggleButtonModule} from 'primeng/togglebutton';
 import {DropdownModule} from 'primeng/dropdown';
+import {InputNumberModule} from 'primeng/inputnumber';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -23,8 +24,9 @@ import { ItemsCadastroComponent } from './items-cadastro/items-cadastro.componen
     BrowserAnimationsModule,
     InputTextModule,
     ButtonModule,
-    CheckboxModule,
+    ToggleButtonModule,
     DropdownModule,
+    InputNumberModule,
     ReactiveFormsModule,
     HttpClientModule
   ],
