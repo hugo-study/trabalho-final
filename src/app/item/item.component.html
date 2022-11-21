@@ -6,4 +6,37 @@
   [style]="{width: '70%'}">
   <itens-cadastro (newItemEvent)="itemSaved($event)"></itens-cadastro>
 </p-dialog>
-<p-button type="button" (click)="showDialog()" icon="pi pi-plus" label="Cadastrar"></p-button>
+
+<p-card header="Itens do Cardapio" >
+  <ng-template pTemplate="subtitle">
+    <p-button type="button" (click)="showDialog()" icon="pi pi-plus" label="Cadastrar"></p-button>
+  </ng-template>
+  
+  <ng-template pTemplate="content">
+    <p-table [value]="itens" responsiveLayout="stack" [breakpoint]="'960px'" >
+      <ng-template pTemplate="header" let-columns>
+          <tr>
+              <th>Nome</th>
+              <th>Descrição</th>
+              <th>Categoria</th>
+              <th>Status</th>
+              <th>Preço</th>
+              <th>Ações</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-item let-columns="columns">
+          <tr>
+              <td>{{item.nome}}</td>
+              <td>{{item.descricao}}</td>
+              <td>{{item.selectedCategoria.nome}}</td>
+              <td>{{item.status ? 'Ativado' : 'Desativado'}}</td>
+              <td>R$ {{item.preco}}</td>
+              <td class="flex gap-2">
+                <button pButton class="p-button-raised p-button-rounded" icon="pi pi-pencil"></button>
+                <button pButton class="p-button-raised p-button-rounded p-button-danger" icon="pi pi-trash"></button>
+              </td>
+          </tr>
+      </ng-template>
+    </p-table>
+  </ng-template>
+</p-card>

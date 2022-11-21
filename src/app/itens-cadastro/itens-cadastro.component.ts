@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Output, EventEmitter } from '@angular/core';
 import { Categoria } from '../item/categoria.interface';
 import { Item } from '../item/item.interface';
-import { ItensService } from '../item/item.service';
+import { ItemService } from '../item/item.service';
 
 @Component({
   selector: 'itens-cadastro',
@@ -28,7 +28,7 @@ export class ItensCadastroComponent implements OnInit {
       null,
       [Validators.required]
     ],
-    ativo: [
+    status: [
       true,
       [Validators.required]
     ],
@@ -40,7 +40,7 @@ export class ItensCadastroComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private itemService: ItensService
+    private itemService: ItemService
     ) {
     this.categories = [
       {id: 1, nome:"Lanches"},

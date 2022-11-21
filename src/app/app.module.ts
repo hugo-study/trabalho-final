@@ -9,6 +9,8 @@ import {InputNumberModule} from 'primeng/inputnumber';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {DialogModule} from 'primeng/dialog';
 import {InputTextareaModule} from 'primeng/inputtextarea';
+import {TableModule} from 'primeng/table';
+import {CardModule} from 'primeng/card';
 
 
 import { AppComponent } from './app.component';
@@ -45,6 +47,8 @@ const routes: Route[] = [
     InputNumberModule,
     DialogModule,
     InputTextareaModule,
+    TableModule,
+    CardModule,
     ReactiveFormsModule,
     HttpClientModule
   ],

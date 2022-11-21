@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from './item.interface';
+import { ItemService } from './item.service';
 
 @Component({
   selector: 'item',
@@ -8,10 +9,12 @@ import { Item } from './item.interface';
 })
 export class ItemComponent implements OnInit {
   display: boolean = false;
+  itens: Item[] = [];
 
-  constructor() { }
+  constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
+    this.getItens()
   }
 
   showDialog() {
@@ -19,7 +22,16 @@ export class ItemComponent implements OnInit {
   }
 
   itemSaved(item: Item) {
+    this.getItens()
     this.display = false;
+  }
+
+  getItens() {
+    this.itemService.getItens().subscribe(
+      (itens) => {this.itens = itens;},
+      (error) => {console.error(error)},
+      () => {console.log('Itens carregado.')}
+    )
   }
 
 }

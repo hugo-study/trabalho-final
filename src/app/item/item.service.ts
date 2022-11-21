@@ -6,7 +6,7 @@ import { Item } from './item.interface';
 @Injectable({
   providedIn: 'root',
 })
-export class ItensService {
+export class ItemService {
   constructor(private http: HttpClient) { }
 
   getItem(id: number): Observable<Item> {
