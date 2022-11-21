@@ -2,9 +2,10 @@
   header="Cadastro de item" 
   [(visible)]="display" 
   [modal]="true" 
-  [maximizable]="true" 
-  [style]="{width: '70%'}">
-  <itens-cadastro (newItemEvent)="itemSaved($event)"></itens-cadastro>
+  [maximizable]="true"
+  [style]="{width: '70%'}"
+  (onHide)="item = undefined">
+  <itens-cadastro (newItemEvent)="itemSaved($event)" [item]="item"></itens-cadastro>
 </p-dialog>
 
 <p-card header="Itens do Cardapio" >
@@ -32,7 +33,11 @@
               <td>{{item.status ? 'Ativado' : 'Desativado'}}</td>
               <td>R$ {{item.preco}}</td>
               <td class="flex gap-2">
-                <button pButton class="p-button-raised p-button-rounded" icon="pi pi-pencil"></button>
+                <button 
+                  pButton 
+                  class="p-button-raised p-button-rounded" 
+                  icon="pi pi-pencil"
+                  (click)="editItem(item)"></button>
                 <button 
                   pButton 
                   class="p-button-raised p-button-rounded p-button-danger" 

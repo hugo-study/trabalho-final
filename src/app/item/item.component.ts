@@ -10,6 +10,7 @@ import { ItemService } from './item.service';
 export class ItemComponent implements OnInit {
   display: boolean = false;
   itens: Item[] = [];
+  item?: Item = undefined;
 
   constructor(private itemService: ItemService) { }
 
@@ -42,4 +43,8 @@ export class ItemComponent implements OnInit {
     )
   }
 
+  editItem(item: Item) {
+    this.item = item
+    this.display = true;
+  }
 }

@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Output, EventEmitter } from '@angular/core';
 import { Categoria } from '../item/categoria.interface';
 import { Item } from '../item/item.interface';
 import { ItemService } from '../item/item.service';
@@ -12,6 +11,7 @@ import { ItemService } from '../item/item.service';
 })
 export class ItensCadastroComponent implements OnInit {
   @Output() newItemEvent = new EventEmitter<Item>();
+  @Input() item?: Item = undefined;
   categories: Categoria[];
 
   produtoForm: FormGroup = this.formBuilder.group({
@@ -44,8 +44,8 @@ export class ItensCadastroComponent implements OnInit {
     ) {
     this.categories = [
       {id: 1, nome:"Lanches"},
-      {id: 1, nome:"Acompanhamentos"},
-      {id: 1, nome:"Bebidas"}
+      {id: 2, nome:"Acompanhamentos"},
+      {id: 3, nome:"Bebidas"}
     ]
   }
 
@@ -54,9 +54,24 @@ export class ItensCadastroComponent implements OnInit {
 
   onSubmit(): void {    
     const item: Item = this.produtoForm.value;
-    
-    this.itemService.save(item).subscribe(() => this.newItemEvent.emit(item));
-    
+
+    if(item.id)
+      this.itemService.update(item).subscribe(() => this.exitForms(item));
+    else
+      this.itemService.save(item).subscribe(() => this.exitForms(item));
   }
 
+  ngOnChanges(): void {
+    if(this.item){
+      this.produtoForm.patchValue(this.item);
+    } else {
+      this.produtoForm.reset()
+    }
+  }
+
+  exitForms(item: Item) {
+    this.item = undefined
+    this.produtoForm.reset()
+    this.newItemEvent.emit(item);
+  }
 }

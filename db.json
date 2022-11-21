@@ -5,10 +5,10 @@
       "nome": "Coca Cola",
       "descricao": "Refrigerante 1L",
       "selectedCategoria": {
-        "id": 1,
-        "nome": "Bebida"
+        "id": 3,
+        "nome": "Bebidas"
       },
-      "ativo": true,
+      "status": true,
       "preco": 1.25
     }
   ]
