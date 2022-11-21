@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Categoria } from './categoria.interface';
 
 @Component({
   selector: 'items-cadastro',
@@ -7,6 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./items-cadastro.component.css']
 })
 export class ItemsCadastroComponent implements OnInit {
+  categories: Categoria[];
+
   produtoForm: FormGroup = this.formBuilder.group({
     nome: [
       '',
@@ -16,11 +19,11 @@ export class ItemsCadastroComponent implements OnInit {
       '',
       [Validators.minLength(3), Validators.maxLength(150), Validators.required],
     ],
-    ativo: [
+    selectedCategoria: [
       '',
       []
     ],
-    quantidade: [
+    ativo: [
       '',
       []
     ],
@@ -30,7 +33,13 @@ export class ItemsCadastroComponent implements OnInit {
     ],
   });
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {
+    this.categories = [
+      {id: 1, nome:"Lanches"},
+      {id: 1, nome:"Acompanhamentos"},
+      {id: 1, nome:"Bebidas"}
+    ]
+  }
 
   ngOnInit(): void {
   }
