@@ -33,7 +33,11 @@
               <td>R$ {{item.preco}}</td>
               <td class="flex gap-2">
                 <button pButton class="p-button-raised p-button-rounded" icon="pi pi-pencil"></button>
-                <button pButton class="p-button-raised p-button-rounded p-button-danger" icon="pi pi-trash"></button>
+                <button 
+                  pButton 
+                  class="p-button-raised p-button-rounded p-button-danger" 
+                  icon="pi pi-trash"
+                  (click)="removeItem(item)"></button>
               </td>
           </tr>
       </ng-template>

@@ -34,4 +34,12 @@ export class ItemComponent implements OnInit {
     )
   }
 
+  removeItem(item: Item) {
+    this.itemService.remove(item).subscribe(
+      () => {this.getItens()},
+      (error) => {console.error(error)},
+      () => {console.log('Item removido.')}
+    )
+  }
+
 }
