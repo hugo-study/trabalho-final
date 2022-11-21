@@ -4,7 +4,6 @@
   [modal]="true" 
   [maximizable]="true" 
   [style]="{width: '70%'}">
-  <items-cadastro (newItemEvent)="itemSaved($event)"></items-cadastro>
+  <itens-cadastro (newItemEvent)="itemSaved($event)"></itens-cadastro>
 </p-dialog>
-
 <p-button type="button" (click)="showDialog()" icon="pi pi-plus" label="Cadastrar"></p-button>

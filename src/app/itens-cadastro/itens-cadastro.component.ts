@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Output, EventEmitter } from '@angular/core';
-import { Categoria } from './categoria.interface';
-import { Item } from './item.interface';
-import { ItemsService } from './items.service';
+import { Categoria } from '../item/categoria.interface';
+import { Item } from '../item/item.interface';
+import { ItensService } from '../item/item.service';
 
 @Component({
-  selector: 'items-cadastro',
-  templateUrl: './items-cadastro.component.html',
-  styleUrls: ['./items-cadastro.component.css']
+  selector: 'itens-cadastro',
+  templateUrl: './itens-cadastro.component.html',
+  styleUrls: ['./itens-cadastro.component.css']
 })
-export class ItemsCadastroComponent implements OnInit {
+export class ItensCadastroComponent implements OnInit {
   @Output() newItemEvent = new EventEmitter<Item>();
   categories: Categoria[];
 
@@ -40,7 +40,7 @@ export class ItemsCadastroComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private itemService: ItemsService
+    private itemService: ItensService
     ) {
     this.categories = [
       {id: 1, nome:"Lanches"},

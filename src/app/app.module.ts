@@ -13,7 +13,7 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ItemsCadastroComponent } from './items-cadastro/items-cadastro.component';
+import { ItensCadastroComponent } from './itens-cadastro/itens-cadastro.component';
 import { ItemComponent } from './item/item.component';
 import { Route, RouterModule } from '@angular/router';
 
@@ -24,13 +24,13 @@ const routes: Route[] = [
   },
   {
     path: 'cadastro',
-    component: ItemsCadastroComponent
+    component: ItensCadastroComponent
   }
 ]
 @NgModule({
   declarations: [
     AppComponent,
-    ItemsCadastroComponent,
+    ItensCadastroComponent,
     ItemComponent
   ],
   imports: [
