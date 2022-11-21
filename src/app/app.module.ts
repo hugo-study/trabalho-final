@@ -11,6 +11,7 @@ import {DialogModule} from 'primeng/dialog';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {TableModule} from 'primeng/table';
 import {CardModule} from 'primeng/card';
+import {SpeedDialModule} from 'primeng/speeddial';
 
 
 import { AppComponent } from './app.component';
@@ -49,6 +50,7 @@ const routes: Route[] = [
     InputTextareaModule,
     TableModule,
     CardModule,
+    SpeedDialModule,
     ReactiveFormsModule,
     HttpClientModule
   ],
