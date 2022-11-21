@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Output, EventEmitter } from '@angular/core';
 import { Categoria } from './categoria.interface';
 import { Item } from './item.interface';
 import { ItemsService } from './items.service';
@@ -10,6 +11,7 @@ import { ItemsService } from './items.service';
   styleUrls: ['./items-cadastro.component.css']
 })
 export class ItemsCadastroComponent implements OnInit {
+  @Output() newItemEvent = new EventEmitter<Item>();
   categories: Categoria[];
 
   produtoForm: FormGroup = this.formBuilder.group({
@@ -53,7 +55,8 @@ export class ItemsCadastroComponent implements OnInit {
   onSubmit(): void {    
     const item: Item = this.produtoForm.value;
     
-    this.itemService.save(item).subscribe(() => console.log('Save'));
+    this.itemService.save(item).subscribe(() => this.newItemEvent.emit(item));
+    
   }
 
 }
