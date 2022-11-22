@@ -1,0 +1,49 @@
+<p-dialog 
+  header="Cadastro de Funcionario" 
+  [(visible)]="display" 
+  [modal]="true" 
+  [maximizable]="true"
+  [style]="{width: '70%'}"
+  (onHide)="funcionario = undefined">
+  <!--<funcionarios-cadastro (newFuncionarioEvent)="funcionarioSaved($event)" [funcionario]="funcionario"></funcionarios-cadastro>-->
+</p-dialog>
+
+<p-card header="Funcionarios do Cardapio" >
+  <ng-template pTemplate="subtitle">
+    <p-button type="button" (click)="showDialog()" icon="pi pi-plus" label="Cadastrar"></p-button>
+  </ng-template>
+  
+  <ng-template pTemplate="content">
+    <p-table [value]="funcionarios" responsiveLayout="stack" [breakpoint]="'960px'" >
+      <ng-template pTemplate="header" let-columns>
+          <tr>
+              <th>Nome</th>
+              <th>CPF</th>
+              <th>Admissão</th>
+              <th>Login</th>
+              <th>Ações</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-funcionario let-columns="columns">
+          <tr>
+              <td>{{funcionario.nome}}</td>
+              <td>{{funcionario.cpf}}</td>
+              <td>{{funcionario.admissao}}</td>
+              <td>{{funcionario.login}}</td>
+              <td class="flex gap-2">
+                <button 
+                  pButton 
+                  class="p-button-raised p-button-rounded" 
+                  icon="pi pi-pencil"
+                  (click)="editFuncionario(funcionario)"></button>
+                <button 
+                  pButton 
+                  class="p-button-raised p-button-rounded p-button-danger" 
+                  icon="pi pi-trash"
+                  (click)="removeFuncionario(funcionario)"></button>
+              </td>
+          </tr>
+      </ng-template>
+    </p-table>
+  </ng-template>
+</p-card>

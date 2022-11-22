@@ -21,5 +21,15 @@
       "cidade": "Criciuma",
       "estado": "Santa Catarina"
     }
+  ],
+  "funcionarios": [
+    {
+      "id": 1,
+      "nome": "Hugo Feijó",
+      "cpf": "000.111.333-77",
+      "admissao": null,
+      "login": "hugo",
+      "senha": "gajkhoag8a498safs"
+    }
   ]
 }

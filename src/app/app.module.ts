@@ -21,6 +21,7 @@ import { ItemComponent } from './item/item.component';
 import { Route, RouterModule } from '@angular/router';
 import { UnidadeComponent } from './unidade/unidade.component';
 import { UnidadesCadastroComponent } from './unidades-cadastro/unidades-cadastro.component';
+import { FuncionarioComponent } from './funcionario/funcionario.component';
 
 const routes: Route[] = [
   {
@@ -30,6 +31,10 @@ const routes: Route[] = [
   {
     path: 'unidade',
     component: UnidadeComponent
+  },
+  {
+    path: 'funcionario',
+    component: FuncionarioComponent
   }
 ]
 @NgModule({
@@ -38,7 +43,8 @@ const routes: Route[] = [
     ItensCadastroComponent,
     ItemComponent,
     UnidadeComponent,
-    UnidadesCadastroComponent
+    UnidadesCadastroComponent,
+    FuncionarioComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
