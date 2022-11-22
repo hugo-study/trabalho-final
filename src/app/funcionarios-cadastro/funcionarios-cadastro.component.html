@@ -1,0 +1,61 @@
+<form [formGroup]="funcionarioForm" (ngSubmit)="onSubmit()" class="formgrid grid">
+    <div class="field col-12 mt-2">
+      <span class="p-float-label">
+        <input id="nome" type="text" formControlName="nome" pInputText class="w-full"> 
+        <label for="nome">Nome</label>
+      </span>
+    </div>
+
+    <div class="field col-12 mt-2 md:col-6">
+      <span class="p-float-label">
+        <p-inputMask 
+            formControlName="cpf" 
+            mask="999.999.999-99" 
+            class="w-full" 
+            styleClass="w-full"></p-inputMask>
+        <label for="sku">CPF</label>
+      </span>
+    </div>
+
+    <div class="field col-12 mt-2 md:col-6">
+        <span class="p-float-label">
+            <p-calendar 
+                dateFormat="dd/mm/yy"
+                id="admissao" 
+                formControlName="admissao"
+                appendTo="body"
+                class="w-full"
+                styleClass="w-full"
+                inputStyleClass="w-full"></p-calendar>
+            <label for="login">Admissão</label>
+        </span>
+    </div>
+
+    <div class="field col-12 mt-2 md:col-6">
+        <span class="p-float-label">
+          <input id="login" type="text" formControlName="login" pInputText class="w-full"> 
+          <label for="login">Login</label>
+        </span>
+    </div>
+
+    <div class="field col-12 mt-2 md:col-6">
+        <span class="p-float-label">
+            <p-password 
+                id="senha" 
+                type="password" 
+                formControlName="senha" 
+                class="w-full" 
+                styleClass="w-full" 
+                panelStyleClass="w-full" 
+                inputStyleClass="w-full"></p-password>
+            <label for="senha">Senha</label>
+        </span>
+    </div>
+
+    <div class="field col-12 mt-2">
+      <div class="flex justify-content-end gap-3">
+        <button pButton type="button" label="Limpar" type="reset" class="p-button-secondary" ></button>
+        <button pButton type="button" label="Cadastrar" type="submit" [disabled]="!funcionarioForm.valid"></button>
+      </div>
+    </div>
+</form>
