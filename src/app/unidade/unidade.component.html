@@ -1,0 +1,51 @@
+<p-dialog 
+  header="Cadastro de unidade" 
+  [(visible)]="display" 
+  [modal]="true" 
+  [maximizable]="true"
+  [style]="{width: '70%'}"
+  (onHide)="unidade = undefined">
+  <!--<unidades-cadastro (newUnidadeEvent)="unidadeSaved($event)" [unidade]="unidade"></Unidades-cadastro>!-->
+</p-dialog>
+
+<p-card header="Unidades do Cardapio" >
+  <ng-template pTemplate="subtitle">
+    <p-button type="button" (click)="showDialog()" icon="pi pi-plus" label="Cadastrar"></p-button>
+  </ng-template>
+  
+  <ng-template pTemplate="content">
+    <p-table [value]="unidades" responsiveLayout="stack" [breakpoint]="'960px'" >
+      <ng-template pTemplate="header" let-columns>
+          <tr>
+              <th>Nome</th>
+              <th>Rua</th>
+              <th>Bairro</th>
+              <th>Cidade</th>
+              <th>Estado</th>
+              <th>Ações</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-unidade let-columns="columns">
+          <tr>
+              <td>{{unidade.nome}}</td>
+              <td>{{unidade.rua}}</td>
+              <td>{{unidade.bairro}}</td>
+              <td>{{unidade.cidade}}</td>
+              <td>{{unidade.estado}}</td>
+              <td class="flex gap-2">
+                <button 
+                  pButton 
+                  class="p-button-raised p-button-rounded" 
+                  icon="pi pi-pencil"
+                  (click)="editUnidade(unidade)"></button>
+                <button 
+                  pButton 
+                  class="p-button-raised p-button-rounded p-button-danger" 
+                  icon="pi pi-trash"
+                  (click)="removeUnidade(unidade)"></button>
+              </td>
+          </tr>
+      </ng-template>
+    </p-table>
+  </ng-template>
+</p-card>

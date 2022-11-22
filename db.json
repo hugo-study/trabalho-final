@@ -11,5 +11,15 @@
       "status": true,
       "preco": 1.25
     }
+  ],
+  "unidades": [
+    {
+      "id": 1,
+      "nome": "Alameda",
+      "rua": "Av. Alameda",
+      "bairro": "Centro",
+      "cidade": "Criciuma",
+      "estado": "Santa Catarina"
+    }
   ]
 }
