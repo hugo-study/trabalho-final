@@ -19,6 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ItensCadastroComponent } from './itens-cadastro/itens-cadastro.component';
 import { ItemComponent } from './item/item.component';
 import { Route, RouterModule } from '@angular/router';
+import { UnidadeComponent } from './unidade/unidade.component';
+import { UnidadesCadastroComponent } from './unidades-cadastro/unidades-cadastro.component';
 
 const routes: Route[] = [
   {
@@ -26,15 +28,17 @@ const routes: Route[] = [
     component: ItemComponent
   },
   {
-    path: 'cadastro',
-    component: ItensCadastroComponent
+    path: 'unidade',
+    component: UnidadeComponent
   }
 ]
 @NgModule({
   declarations: [
     AppComponent,
     ItensCadastroComponent,
-    ItemComponent
+    ItemComponent,
+    UnidadeComponent,
+    UnidadesCadastroComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

@@ -1,11 +1,11 @@
 <p-dialog 
-  header="Cadastro de unidade" 
+  header="Cadastro de Unidade" 
   [(visible)]="display" 
   [modal]="true" 
   [maximizable]="true"
   [style]="{width: '70%'}"
   (onHide)="unidade = undefined">
-  <!--<unidades-cadastro (newUnidadeEvent)="unidadeSaved($event)" [unidade]="unidade"></Unidades-cadastro>!-->
+  <unidades-cadastro (newUnidadeEvent)="unidadeSaved($event)" [unidade]="unidade"></unidades-cadastro>
 </p-dialog>
 
 <p-card header="Unidades do Cardapio" >
