@@ -12,6 +12,9 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
 import {TableModule} from 'primeng/table';
 import {CardModule} from 'primeng/card';
 import {SpeedDialModule} from 'primeng/speeddial';
+import {InputMaskModule} from 'primeng/inputmask';
+import {PasswordModule} from 'primeng/password';
+import {CalendarModule} from 'primeng/calendar'
 
 
 import { AppComponent } from './app.component';
@@ -22,6 +25,7 @@ import { Route, RouterModule } from '@angular/router';
 import { UnidadeComponent } from './unidade/unidade.component';
 import { UnidadesCadastroComponent } from './unidades-cadastro/unidades-cadastro.component';
 import { FuncionarioComponent } from './funcionario/funcionario.component';
+import { FuncionariosCadastroComponent } from './funcionarios-cadastro/funcionarios-cadastro.component';
 
 const routes: Route[] = [
   {
@@ -35,6 +39,11 @@ const routes: Route[] = [
   {
     path: 'funcionario',
     component: FuncionarioComponent
+  },
+  { 
+    path: '',   
+    redirectTo: '/item', 
+    pathMatch: 'full' 
   }
 ]
 @NgModule({
@@ -44,7 +53,8 @@ const routes: Route[] = [
     ItemComponent,
     UnidadeComponent,
     UnidadesCadastroComponent,
-    FuncionarioComponent
+    FuncionarioComponent,
+    FuncionariosCadastroComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -61,6 +71,9 @@ const routes: Route[] = [
     TableModule,
     CardModule,
     SpeedDialModule,
+    InputMaskModule,
+    PasswordModule,
+    CalendarModule,
     ReactiveFormsModule,
     HttpClientModule
   ],

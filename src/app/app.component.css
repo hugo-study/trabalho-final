@@ -3,3 +3,8 @@
   right: 70px;
   bottom: 70px;
 }
+
+html,
+body {
+  height: 100% !important;
+}

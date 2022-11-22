@@ -3,7 +3,7 @@ import { Funcionario } from './funcionario.interface';
 import { FuncionarioService } from './funcionario.service';
 
 @Component({
-  selector: 'app-funcionario',
+  selector: 'funcionario',
   templateUrl: './funcionario.component.html',
   styleUrls: ['./funcionario.component.css']
 })

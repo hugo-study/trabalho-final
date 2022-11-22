@@ -24,12 +24,12 @@
   ],
   "funcionarios": [
     {
-      "id": 1,
-      "nome": "Hugo Feijó",
-      "cpf": "000.111.333-77",
-      "admissao": null,
-      "login": "hugo",
-      "senha": "gajkhoag8a498safs"
+      "id": 3,
+      "nome": "Luana",
+      "cpf": "598.548.748-48",
+      "admissao": "2022-08-10T03:00:00.000Z",
+      "login": "luana.souza",
+      "senha": "123asd789"
     }
   ]
 }
