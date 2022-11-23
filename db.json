@@ -10,6 +10,17 @@
       },
       "status": true,
       "preco": 1.25
+    },
+    {
+      "id": 2,
+      "nome": "Nestlé",
+      "descricao": "Chocolate ",
+      "selectedCategoria": {
+        "id": 2,
+        "nome": "Acompanhamentos"
+      },
+      "status": false,
+      "preco": 4.75
     }
   ],
   "unidades": [
@@ -28,8 +39,16 @@
       "nome": "Luana",
       "cpf": "598.548.748-48",
       "admissao": "2022-08-10T03:00:00.000Z",
-      "login": "luana.souza",
+      "login": "luana.batti",
       "senha": "123asd789"
+    },
+    {
+      "id": 4,
+      "nome": "Karine",
+      "cpf": "457.986.413-51",
+      "admissao": "2021-01-04T03:00:00.000Z",
+      "login": "karine.hugo",
+      "senha": "fitadental@321"
     }
   ]
 }
